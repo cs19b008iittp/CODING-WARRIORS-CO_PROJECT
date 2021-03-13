@@ -1,0 +1,545 @@
+#include <stdexcept>
+#include <bits/stdc++.h> 
+#include<string>
+#include<sstream>
+#include <iostream>
+using namespace std;
+int mem[1024];
+int R[32]={0};
+int i;
+  void addi(string str1,string str2,int g)
+{
+  //  cout<<str4<<"\n";
+       int l1;
+    string STR="";
+   // cout<<str1;
+    int k=str1.size();
+    int p=0;
+    try{
+    while(str1.size()!=0)
+    {
+         l1=int(str1.at(p));
+        if(l1>=48&&l1<=57)
+        {
+            ostringstream ex;
+            ex<<str1.at(p);
+            string m=ex.str();
+           // string m(11,str1.at(p));
+           // cout<<m;
+            STR=STR+m;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     // cout<<str2;
+     stringstream geek(STR); 
+       geek >> l1;
+       //  cout<<l1<<endl;
+      // cout<<str2<<"\n";
+       int l2;
+    string STR1="";
+   // cout<<str1;
+    k=str2.size();
+     p=0;
+    try{
+    while(str2.size()!=0)
+    {
+         l2=int(str2.at(p));
+        if(l2>=48&&l2<=57)
+        {
+            ostringstream ex1;
+            ex1<<str2.at(p);
+            string m=ex1.str();
+           // string m(12,str2.at(p));
+           // cout<<m;
+            STR1=STR1+m;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     // cout<<str2;
+     stringstream Geek(STR1); 
+       Geek >> l2;
+      // cout<<g;
+      //cout<<R[l2]<<endl;
+       R[l1]=R[l2]+g;
+     //  cout<<R[l1]<<endl;
+}
+  void add(string str2, string str3,string str4)
+   {
+      // cout<<str4<<"\n";
+     // cout<<"\n"<<str2<<" "<<str3<<" "<<str4;
+       int l2;
+    string STR="";
+   // cout<<str1;
+    int k=str2.size();
+    int p=0;
+    try{
+    while(str2.size()!=0)
+    {
+         l2=int(str2.at(p));
+        if(l2>=48&&l2<=57)
+        {
+            ostringstream ex;
+            ex<< str2.at(p);
+            string m=ex.str();
+            //string m(12,str2.at(p));
+           // cout<<m;
+            STR=STR+m;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     stringstream geek1(STR); 
+       geek1 >> l2;
+    // cout<<"\n"<<l2;
+       int l;
+    string str="";
+   // cout<<str1;
+     k=str3.size();
+     p=0;
+    try{
+    while(str3.size()!=0)
+    {
+         l=int(str3.at(p));
+        if(l>=48&&l<=57)
+        {
+            ostringstream ex1;
+            ex1<<str3.at(p);
+            //string m(1,str3.at(p));
+            string m=ex1.str();
+           // cout<<m;
+            str=str+m;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     // cout<<str2;
+    // cout<<str<<endl;
+     stringstream geek3(str);          
+       geek3 >> l; 
+       //cout<<"\n"<<l<<endl;
+   //cout<<"r2= "<<r2<<"\n";
+
+     int l1;
+    string fun="";
+   // cout<<str1;
+     k=str4.size();
+     p=0;
+    try{
+    while(str4.size()!=0)
+    {
+         l1=int(str4.at(p));
+        if(l1>=48&&l1<=57)
+        {
+            ostringstream ex2;
+            ex2<<str4.at(p);
+            //string m(11,str4.at(p));
+            string m=ex2.str();
+           // cout<<m;
+            fun=fun+m;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     // cout<<str2;
+    // cout<<fun<<endl;
+     stringstream geek2(fun); 
+       geek2 >> l1;
+     //cout<<"\n"<<l1;
+       //cout<<l1<<"\n";
+       //int r3= mem[l1];
+      //cout<<"r3= "<<r3<<"\n";
+     // cout<<l2<<" "<<l<<" "<<l1;
+      //cout<<R[l]<<endl;
+      //cout<<R[l1]<<endl;
+      R[l2] =R[l]+R[l1];
+      //cout<<R[l2]<<endl;
+      //cout<<R[l2]<<endl;
+     /*vector <int> R1;    
+   vector <int>::iterator Iter1;
+    vector <int> R2;    
+   vector <int>::iterator Iter2;
+    vector <int> R3;    
+   vector <int>::iterator Iter3;
+      // int R3[32],R1[32],R2[32],k,i=0,j=0,l=0,T1[32],T2[32],T3[32];
+       int r1;
+       r1=r2+r3;
+        cout<<k<<endl;
+
+      while(r1!=0)
+      {
+          R1.push_back( r1%10 );   
+          //R1[i]=r1%10;
+          r1=r1/10;
+          //i++;
+      }
+      cout<<endl;
+      reverse(R1.begin(), R1.end());
+
+       for ( Iter1 = R1.begin( ) ; Iter1 !=R1.end( ) ; Iter1++ )    
+      cout << *Iter1; 
+
+      while(r2!=0)
+      {
+          R2.push_back( r2%10 );   
+          //R2[j]=r2%10;
+          r2=r2/10;
+         // j++;
+      }
+      cout<<endl;
+      reverse(R2.begin(),R2.end());
+
+       for ( Iter2 = R2.begin( ) ; Iter2 != R2.end( ) ; Iter2++ )    
+      cout << *Iter2;   
+      while(k!=0)
+      {
+          R3.push_back( k%10 );   
+         // R3[l]=k%10;
+          k=k/10;
+         // l++;
+      }
+      cout<<endl;
+      reverse(R3.begin(),R3.end());
+
+       for ( Iter3 = R3.begin( ) ; Iter3 != R3.end( ) ; Iter3++ )    
+      cout << *Iter3;   */
+   }
+
+void load(string str1, string str)
+{
+   // cout<<str1<<" "<<str<<endl;
+    int l;
+    string str2="";
+   // cout<<str1;
+    int k=str1.size();
+    int p=0;
+    try{
+    while(str1.size()!=0)
+    {
+         l=int(str1.at(p));
+        if(l>=48&&l<=57)
+        {
+            string m(1,str1.at(p));
+           // cout<<m;
+            str2=str2+m;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     // cout<<str2;
+     stringstream geek(str2); 
+       geek >> l; 
+
+   int l1;
+    string str3="";
+   // cout<<str1;
+    k=str.size();
+     p=0;
+     int count=0;
+    // cout<<"\n"<<k<<"\n";
+    try{
+    while(str.size()!=0)
+    {
+         l1=int(str.at(p));
+        // cout<<l1<<endl;
+        if(l1>=48&&l1<=57)
+        {
+            count++;
+            ostringstream m;
+            m<< str.at(p);
+           // string m(11,str.at(p));
+           string keep =m.str();
+           // cout<<m;
+            str3=str3+keep;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     // cout<<str2;
+     //cout<<str3<<endl;
+     stringstream geek1(str3); 
+       geek1 >> l1; 
+       //cout<<l1<<endl;
+       R[l]=mem[11];
+      // cout<<l2<<endl;
+       //cout<<l<<endl;
+       //cout<<"\n"<<R[l];
+   //cout<<"\n"<<"value in memory  in location  "<<l<<" =  "<<mem[l]<<endl;
+}
+
+void storeword(string str, string str1)
+{
+    //cout<<str<<" "<<str1<<endl;
+     int l;
+    string STR="";
+   // cout<<str1;
+    int k=str.size();
+    int p=0;
+    try{
+    while(str.size()!=0)
+    {
+         l=int(str.at(p));
+        if(l>=48&&l<=57)
+        {
+            ostringstream ex;
+            ex<<str.at(p);
+            string m=ex.str();
+           // string m(1,str.at(p));
+           // cout<<m;
+            STR=STR+m;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     // cout<<str2;
+     stringstream geek(STR); 
+       geek >> l; 
+  // cout<<l<<endl;
+       int i=0,l2;
+    string STR1="";
+   // cout<<str1;
+     k=str1.size();
+     p=0;
+    try{
+    while(str1.size()!=0)
+    {
+         l2=int(str1.at(p));
+        if(l2>=48&&l2<=57)
+        {
+            ostringstream ex1;
+            ex1<<str1.at(p);
+            string m=ex1.str();
+           // string m(12,str1.at(p));
+           // cout<<m;
+            STR1=STR1+m;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     // cout<<str2;
+     stringstream GEEK(STR1); 
+       GEEK >> l2;
+       //cout<<R[l]<<endl;
+       //cout<<" "<<l2<<endl;
+      // cout<<mem[l2];
+       mem[l2]=R[l];
+      // cout<<"\n"<<mem[l2];
+   // cout<<"\n"<<"value in memory  in location  "<<l2<<" =  "<<mem[l2]<<endl;
+}
+ void parser(string str)
+{
+    istringstream ss(str); 
+    string str1,str2,str3,str4;
+    string word; // for storing each word str = li t0[32] 0
+  
+    // Traverse through all words 
+    // while loop till we get  
+    // strings to store in string word 
+    while (ss >> word)  
+    { 
+        cout << word <<" "; 
+        int l1=0, l2=0;
+        // print the read word 
+         if(word=="lw")
+         {
+         i=2;
+        while(i!=0)
+        {
+        ss >>word;
+        cout<<word<<" ";
+        if(i==2)
+        {
+           // cout<<word<<" ";
+            str1=word;
+        }
+        if(i==1)
+        {
+            //stringstream geek(word);
+           //  geek>> l2; 
+           str2=word;
+            //cout<<l2<<" ";
+        }
+        i--;
+        }
+       load(str1, str2);
+         }
+
+       if(word=="add")
+       {
+          i=3;
+         while(i!=0)
+         {
+             ss>>word;
+             cout<<word<<" ";
+             if(i==3)
+             {
+                // ss>>word;
+                 str2=word;
+             }
+             else if(i==2)
+             {
+                // ss>>word;
+               // cout<<word<<"\n";
+                  str3=word;
+             }
+             else if(i==1)
+             {
+                // ss>>word;
+               // cout<<word<<"\n";
+                  str4=word;
+             }
+             i--;
+         }
+         //add obj;
+         add(str2,str3,str4);
+       }
+        if(word=="addi")
+        {
+           i=3;
+           int g;
+          while(i!=0)
+          {
+              ss>>word;
+              cout<<word<<" ";
+              if(i==3)
+              {
+                  str1=word;
+              }
+              if(i==2)
+              {
+                  str2=word;
+              }
+              if(i==1)
+              {
+                  stringstream take(word);
+                  take >> g;
+              }
+              i--;
+          }
+          addi(str1,str2,g);
+        }
+
+       if(word=="lw")
+       {
+           i=2;
+          while(i!=0)
+          {
+              ss>>word;
+              cout<<word<<" ";
+              if(i==2)
+              {
+                 str1=word;
+              }
+              if(i==1)
+              {
+                  str2=word;
+                 // stringstream geek2(word);
+                  //geek2>>l2;
+              }
+              i--;
+          }
+          
+          load(str1,str2);
+       }
+
+      if(word=="sw")
+      {
+           i=2;
+          while(i!=0)
+          {
+              ss>>word;
+              cout<<word<<" ";
+              if(i==2)
+              {
+                 str1=word;
+              }
+              if(i==1)
+              {
+                  str2=word;
+                 // stringstream geek2(word);
+                  //geek2>>l2;
+              }
+              i--;
+          }
+    
+          storeword(str1,str2);
+      }
+}
+    
+    cout<<endl;
+}
+
+int main () {
+   ifstream infile; 
+   infile.open("sample.txt"); 
+   if (!infile) {
+		cout << "No such file";
+	}
+    else
+    {
+     string str;
+     while(getline(infile, str))
+   {
+       parser(str);
+   }
+     
+    }
+   infile.close();
+
+   return 0;
+}
