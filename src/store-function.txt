@@ -1,0 +1,54 @@
+void storeword(string str, string str1)
+{
+     int l;
+    string STR="";
+    int k=str.size();
+    int p=0;
+    try{
+    while(str.size()!=0)
+    {
+         l=int(str.at(p));
+        if(l>=48&&l<=57)
+        {
+            ostringstream ex;
+            ex<<str.at(p);
+            string m=ex.str();
+            STR=STR+m;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     stringstream geek(STR); 
+       geek >> l; 
+       int i=0,l2;
+    string STR1="";
+     k=str1.size();
+     p=0;
+    try{
+    while(str1.size()!=0)
+    {
+         l2=int(str1.at(p));
+        if(l2>=48&&l2<=57)
+        {
+            ostringstream ex1;
+            ex1<<str1.at(p);
+            string m=ex1.str();
+            STR1=STR1+m;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     stringstream GEEK(STR1); 
+       GEEK >> l2;
+       mem[R[l2]] = R[l];
+}

@@ -1,0 +1,8 @@
+void arr(int t1, int t2, int t3, int t4, int t5)
+{
+     mem[0]=t1;
+     mem[1]=t2;
+     mem[2]=t3;
+     mem[3]=t4;
+     mem[4]=t5;
+}

@@ -1,0 +1,245 @@
+void parser(string str,int pin)
+{
+    istringstream ss(str); 
+    string str1,str2,str3,str4;
+    string word; // for storing each word str 
+  
+    // Traverse through all words 
+    // while loop till we get  
+    // strings to store in string word 
+    while (ss >> word)  
+    { 
+      
+        int l1=0, l2=0;
+         
+       if(word=="add")
+       {
+          i=3;
+         while(i!=0)
+         {
+             ss>>word;
+             if(i==3)
+             {
+                 str2=word;
+             }
+             else if(i==2)
+             {
+                  str3=word;
+             }
+             else if(i==1)
+             {
+                  str4=word;
+             }
+             i--;
+         }
+    
+         add(str2,str3,str4);
+       }
+        if(word=="addi")
+        {
+           i=3;
+           int g;
+          while(i!=0)
+          {
+              ss>>word;
+     
+              if(i==3)
+              {
+                  str1=word;
+              }
+              if(i==2)
+              {
+                  str2=word;
+              }
+              if(i==1)
+              {
+                  stringstream take(word);
+                  take >> g;
+              }
+              i--;
+          }
+          addi(str1,str2,g);
+        }
+
+       if(word=="lw")
+       {
+           i=2;
+          while(i!=0)
+          {
+              ss>>word;
+           
+              if(i==2)
+              {
+                 str1=word;
+              }
+              if(i==1)
+              {
+                  str2=word;
+                 
+              }
+              i--;
+          }
+          
+          load(str1,str2);
+       }
+
+      if(word=="sw")
+      {
+           i=2;
+          while(i!=0)
+          {
+              ss>>word;
+            
+              if(i==2)
+              {
+                 str1=word;
+              }
+              if(i==1)
+              {
+                  str2=word;
+                 
+              }
+              i--;
+          }
+    
+          storeword(str1,str2);
+      }
+      if(word=="j")
+      {
+          i=1;
+          while(i!=0)
+          {
+              ss>>word;
+            
+              if(i==1)
+              {
+                  stringstream stream(word);
+                  stream>>l2;
+              }
+              i--;
+          }
+          jump(l2);
+      }
+      if(word=="beq")
+      {
+          i=3;
+          while(i!=0)
+          {
+              ss>>word;
+          
+              if(i==3)
+              {
+                  str1=word;
+              }
+              if(i==2)
+              {
+                  str2=word;
+              }
+              if(i==1)
+              {
+                  stringstream stream1(word);
+                   stream1>>l2;
+              }
+              i--;
+          }
+        
+          branch_equal(str1,str2,l2,pin);
+      }
+      if(word=="sub")
+       {
+          i=3;
+         while(i!=0)
+         {
+             ss>>word;
+            
+             if(i==3)
+             {
+                 str2=word;
+             }
+             else if(i==2)
+             {
+               
+                  str3=word;
+             }
+             else if(i==1)
+             {
+                  str4=word;
+             }
+             i--;
+         }
+         sub(str2,str3,str4);
+       }
+       if(word=="slt")
+       {
+           i=3;
+         while(i!=0)
+         {
+             ss>>word;
+            
+             if(i==3)
+             {
+                 str2=word;
+             }
+             else if(i==2)
+             {
+            
+                  str3=word;
+             }
+             else if(i==1)
+             {
+               
+                  str4=word;
+             }
+             i--;
+         }
+         set_less_than(str2,str3,str4);
+       }
+       if(word=="array")
+       {
+           i=0;
+           int t1, t2, t3, t4, t5;
+           while(i<5)
+           {
+             ss>>word;
+           
+           if(i==0)
+           {
+            stringstream stream3(word);
+              stream3>>l2; 
+              t1=l2;
+           }
+           if(i==1)
+           {
+                stringstream stream2(word);
+                stream2>> l2;
+                t2=l2;
+               
+           }
+              
+            if(i==2)
+            {
+                 stringstream stream4(word);
+                stream4>> l2;
+                 t3=l2;
+            }
+            if(i==3)
+            {
+               stringstream stream5(word);
+                stream5>> l2;
+                 t4=l2;
+            }
+            if(i==4)
+            {
+                stringstream stream6(word);
+                stream6>> l2;
+                t5=l2; 
+            }
+              i++;
+           }
+     
+           arr(t1,t2,t3,t4,t5);
+       }
+    }
+    
+   
+}

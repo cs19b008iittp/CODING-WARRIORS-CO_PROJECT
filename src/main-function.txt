@@ -1,0 +1,35 @@
+int main () {
+    ifstream infile; 
+   infile.open("bubblesort.asm"); 
+   if (!infile) {
+		cout << "No such file";
+        exit(0);
+	}
+    else
+    {
+     string str;
+     while(getline(infile,str))
+   {
+       counter1++;
+       
+   }
+    }
+    infile.close();
+  
+   infile.open("bubblesort.asm"); 
+   if (!infile) {
+		cout << "No such file";
+	}
+    else
+    {
+     string str;
+     while(getline(infile,str))
+   {
+       pin=pin+1;
+       parser(str,pin);
+      
+   }
+    }
+   infile.close();
+   return 0;
+}

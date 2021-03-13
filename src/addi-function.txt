@@ -1,0 +1,62 @@
+void addi(string str1,string str2,int g)
+{
+       int l1;
+    string STR="";
+    int k=str1.size();
+    int p=0;
+    try{
+    while(str1.size()!=0)
+    {
+         l1=int(str1.at(p));
+        if(l1>=48&&l1<=57)
+        {
+            ostringstream ex;
+            ex<<str1.at(p);
+            string m=ex.str();
+        
+            STR=STR+m;
+
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     stringstream geek(STR); 
+       geek >> l1;
+       int l2;
+    string STR1="";
+   
+    k=str2.size();
+     p=0;
+    try{
+    while(str2.size()!=0)
+    {
+         l2=int(str2.at(p));
+        if(l2>=48&&l2<=57)
+        {
+            ostringstream ex1;
+            ex1<<str2.at(p);
+            string m=ex1.str();
+
+            STR1=STR1+m;
+        
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+
+     stringstream Geek(STR1); 
+       Geek >> l2;
+    
+       R[l1]=R[l2]+g;
+
+}

@@ -1,0 +1,92 @@
+void set_less_than(string str1,string str2,string str3)
+{
+     int l;
+    string STR="";
+    int k=str1.size();
+    int p=0;
+    try{
+    while(str1.size()!=0)
+    {
+         l=int(str1.at(p));
+        if(l>=48&&l<=57)
+        {
+            ostringstream ex;
+            ex<<str1.at(p);
+            string m=ex.str();
+            STR=STR+m;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     stringstream geek(STR); 
+       geek >> l; 
+  
+       int i=0,l2;
+    string STR1="";
+
+     k=str2.size();
+     p=0;
+    try{
+    while(str2.size()!=0)
+    {
+         l2=int(str2.at(p));
+        if(l2>=48&&l2<=57)
+        {
+            ostringstream ex1;
+            ex1<<str2.at(p);
+            string m=ex1.str();
+            STR1=STR1+m;
+           
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     
+     stringstream GEEK(STR1); 
+       GEEK >> l2;
+
+       int l3;
+    string STR2="";
+     k=str3.size();
+     p=0;
+    try{
+    while(str3.size()!=0)
+    {
+         l3=int(str3.at(p));
+        if(l3>=48&&l3<=57)
+        {
+            ostringstream ex2;
+            ex2<<str3.at(p);
+            string m=ex2.str();
+           
+            STR2=STR2+m;
+           
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+    
+     stringstream GEEK3(STR2); 
+       GEEK3 >> l3;
+       if(R[l2]<R[l3])
+       {
+           R[l]=1;
+       }
+       else
+       R[l]=0;
+}

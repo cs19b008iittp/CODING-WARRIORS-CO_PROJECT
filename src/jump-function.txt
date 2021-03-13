@@ -1,0 +1,48 @@
+ void jump(int l)
+  {
+     
+      if(l>counter1)
+      {
+          display();
+          cout<<"Sorted Array: ";
+          for(i=0;i<5;i++)
+          {
+               cout<<mem[i]<<" ";
+          }
+           exit(0);
+      }
+      else
+      {
+      ifstream infile; 
+      int i=0;
+     infile.open("bubblesort.asm"); 
+   if (!infile) {
+		cout << "No such file";
+        exit(0);
+	}
+    else
+    {
+    
+    while(!infile.eof()&&i<counter1)
+   {
+        getline(infile, line[i]);
+       i++;
+     
+   }
+  
+   
+    for(i=(l-1);i<=counter1;i++)
+    {
+       
+        if(i==counter1)
+        {
+             parser(line[i],i);
+        }
+        else
+        parser(line[i],i+1);
+    }
+    infile.close();
+    }
+   
+      }
+  }

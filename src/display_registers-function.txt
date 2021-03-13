@@ -1,0 +1,7 @@
+void display()
+{
+    for(int i=0;i<32;i++)
+    {
+        cout<<  "  R"<<i<<"   "<<R[i]<<endl;
+    }
+}

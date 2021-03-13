@@ -1,0 +1,69 @@
+void load(string str1, string str)
+{
+   
+    int l;
+    string str2="";
+
+    int k=str1.size();
+    int p=0;
+    try{
+    while(str1.size()!=0)
+    {
+         l=int(str1.at(p));
+        if(l>=48&&l<=57)
+        {
+            string m(1,str1.at(p));
+        
+            str2=str2+m;
+           
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     
+     stringstream geek(str2); 
+       geek >> l; 
+
+   int l1;
+    string str3="";
+   
+    k=str.size();
+     p=0;
+     int count=0;
+
+    try{
+    while(str.size()!=0)
+    {
+         l1=int(str.at(p));
+        
+        if(l1>=48&&l1<=57)
+        {
+            count++;
+            ostringstream m;
+            m<< str.at(p);
+    
+           string keep =m.str();
+        
+            str3=str3+keep;
+        
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+    
+     stringstream geek1(str3); 
+       geek1 >> l1; 
+       int temp=R[l1];
+       R[l]=mem[temp];
+      
+}

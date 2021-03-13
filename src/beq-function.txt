@@ -1,0 +1,71 @@
+void branch_equal(string str1,string str2,int l2,int pin)
+   {
+       int l;
+    string STR="";
+  
+    int k=str1.size();
+    int p=0;
+    try{
+    while(str1.size()!=0)
+    {
+         l=int(str1.at(p));
+        if(l>=48&&l<=57)
+        {
+            ostringstream ex;
+            ex<<str1.at(p);
+            string m=ex.str();
+           
+            STR=STR+m;
+           
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     
+     stringstream geek(STR); 
+       geek >> l; 
+
+       int l1;
+    string STR1="";
+   
+     k=str2.size();
+     p=0;
+    try{
+    while(str2.size()!=0)
+    {
+         l1=int(str2.at(p));
+        if(l1>=48&&l1<=57)
+        {
+            ostringstream ex;
+            ex<<str2.at(p);
+            string m=ex.str();
+        
+            STR1=STR1+m;
+        
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     stringstream stream2(STR1); 
+       stream2 >> l1; 
+       
+        if(R[l]==R[l1])
+        {
+           jump(l2);
+       }
+       else
+       {
+           
+           jump(++pin);
+       }
+   }
