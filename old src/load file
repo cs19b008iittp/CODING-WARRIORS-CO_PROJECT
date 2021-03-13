@@ -1,0 +1,174 @@
+#include <fstream>
+#include<vector>
+#include<algorithm>
+#include <stdexcept>
+#include <bits/stdc++.h> 
+#include<string>
+#include<sstream>
+#include <iostream>
+using namespace std;
+int mem[1024];
+/*void add(int r1, int r2)
+   {
+     vector <int> R1;    
+   vector <int>::iterator Iter1;
+    vector <int> R2;    
+   vector <int>::iterator Iter2;
+    vector <int> R3;    
+   vector <int>::iterator Iter3;
+      // int R3[32],R1[32],R2[32],k,i=0,j=0,l=0,T1[32],T2[32],T3[32];
+       int k;
+       k=r1+r2;
+        cout<<k<<endl;
+
+      while(r1!=0)
+      {
+          R1.push_back( r1%10 );   
+          //R1[i]=r1%10;
+          r1=r1/10;
+          //i++;
+      }
+      cout<<endl;
+      reverse(R1.begin(), R1.end());
+
+       for ( Iter1 = R1.begin( ) ; Iter1 !=R1.end( ) ; Iter1++ )    
+      cout << *Iter1; 
+
+      while(r2!=0)
+      {
+          R2.push_back( r2%10 );   
+          //R2[j]=r2%10;
+          r2=r2/10;
+         // j++;
+      }
+      cout<<endl;
+      reverse(R2.begin(),R2.end());
+
+       for ( Iter2 = R2.begin( ) ; Iter2 != R2.end( ) ; Iter2++ )    
+      cout << *Iter2;   
+      while(k!=0)
+      {
+          R3.push_back( k%10 );   
+         // R3[l]=k%10;
+          k=k/10;
+         // l++;
+      }
+      cout<<endl;
+      reverse(R3.begin(),R3.end());
+
+       for ( Iter3 = R3.begin( ) ; Iter3 != R3.end( ) ; Iter3++ )    
+      cout << *Iter3;   
+   }*/
+void load(string str1, int l2)
+{
+    int i=0,l;
+    string str2="";
+   // cout<<str1;
+    int k=str1.size();
+    int p=0;
+    try{
+    while(str1.size()!=0)
+    {
+         l=int(str1.at(p));
+        if(l>=48&&l<=57)
+        {
+            string m(1,str1.at(p));
+           // cout<<m;
+            str2=str2+m;
+           // cout<<str2<<endl;;
+        }
+        k--;
+        p++;
+    }
+    }
+    catch (const std::out_of_range& oor)
+    {
+        //cout<<"error"<<endl;
+    }
+     // cout<<str2;
+     stringstream geek(str2); 
+       geek >> l; 
+       mem[l]=l2;
+    cout<<"\n"<<"value in memory  in location  "<<l<<" =  "<<mem[l]<<endl;
+}
+void parser(string str)
+{
+    istringstream ss(str); 
+    string str1;
+    string word; // for storing each word str = li t0[32] 0
+  
+    // Traverse through all words 
+    // while loop till we get  
+    // strings to store in string word 
+    while (ss >> word)  
+    { 
+        cout << word <<" "; 
+        int l1=0, l2=0;
+        // print the read word 
+        if(word=="li")
+    {
+        int i=2;
+        while(i!=0)
+        {
+        ss >>word;
+        if(i==2)
+        {
+            cout<<word<<" ";
+            str1=word;
+        }
+        if(i==1)
+        {
+             stringstream geek(word);
+            geek >> l2; 
+            cout<<l2<<" ";
+        }
+        i--;
+        }
+       load(str1, l2);
+    }
+      /*else if(word=="add")
+      {
+         int i=3;
+         while(i!=0)
+         {
+             ss>>word;
+             if(i==3)
+             {
+                string str1=word;
+             }
+             if(i==2)
+             {
+                 string str2=word;
+             }
+             if(i==1)
+             {
+                 string str3=word;
+             }
+             i--;
+         }
+         add(str1,str2,str3);
+
+      }*/
+    } 
+    cout<<endl;
+}
+int main () {
+   ifstream infile; 
+   infile.open("swap.txt"); 
+   if (!infile) {
+		cout << "No such file";
+	}
+    else
+    {
+     string str;
+     while(getline(infile, str))
+   {
+       //cout<<str<<endl;
+       parser(str);
+   }
+     
+    }
+   infile.close();
+
+   return 0;
+}
