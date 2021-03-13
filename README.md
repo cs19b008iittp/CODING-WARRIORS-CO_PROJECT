@@ -12,3 +12,15 @@ Our Simulator supports MIPS (Microprocessor without Interlocked Pipelined Stages
 
 We choose C++ programming language for developing this simulator. 
 
+Function Implementations: 
+
+  ADD function 
+  ADDI function 
+  BEQ function 
+  SLT function 
+  JUMP function 
+  LOAD function 
+  STORE function 
+  SUB function 
+  PARSER function		 
+  MEMORY function	 
