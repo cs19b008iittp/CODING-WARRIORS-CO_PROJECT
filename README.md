@@ -1,6 +1,6 @@
-                                                          COMPUTER ORGANIZATION AND ARCHITECTURE 
+                                                    COMPUTER ORGANIZATION AND ARCHITECTURE 
 
-                                                                          PROJECT 
+                                                                    PROJECT 
 
 #Coding Warriors 
 
