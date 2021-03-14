@@ -2,7 +2,7 @@
 
                                                             PROJECT 
 
-#Coding Warriors 
+# Coding Warriors 
 
 AIM: Develop a simulator on the lines of QtSPIM  
 
@@ -24,3 +24,5 @@ Function Implementations:
   SUB function 
   PARSER function		 
   MEMORY function	 
+
+# ADD FUNCTION
