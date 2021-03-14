@@ -18,28 +18,28 @@ MIPS INSTRUCTIONS: 
 
 • Arithmetic Instructions  
 INSTRUCTION  	                        SYNTAX                    	        MEANING 
-ADD (Addition) 	                        ADD R1, R2, R3 	                    R1 = R2 + R3 
+ADD (Addition) 	                        ADD R1, R2, R3 	                    	R1 = R2 + R3 
 ADDI (Add immediate)        	        ADDI R1, R2, 100 	                R1 = R2 + 100 
-SUB (Subtract) 	                        SUB R1, R2, R3 	                    R1 = R2 - R3 
+SUB (Subtract) 	                        SUB R1, R2, R3 	                    	R1 = R2 - R3 
 ADDU (Add unsigned) 	                ADDU R1, R2, R3 	                R1 = R2 + R3 
 ADDIU (Add immediate unsigned) 	        ADDIU R1, R2, 100 	                R1 = R2 + 100 
 		 
  
 • Load/Store Instructions 
-INSTRUCTION 	                        SYNTAX 	                            MEANING 
+INSTRUCTION 	                        SYNTAX 	                            	MEANING 
 LW (Load Word) 	                        LW R1, 100(R2) 	                   	R1←Mem [R2+100] 
-SW (Store Word) 	                	SW R1, 100(R2) 	                   	Mem[R2+100] ←R1 
+SW (Store Word) 	                SW R1, 100(R2) 	                   	Mem[R2+100] ←R1 
  
 • Conditional/Branching Instructions 
-INSTRUCTION 	                        SYNTAX 	                            MEANING 
+INSTRUCTION 	                        SYNTAX 	                            	MEANING 
 BEQ (Branch on equal) 	                BEQ R1, R2, 100 	                if (R1==R2) goto PC+4+100 
-BNE (Branch on not equal) 	        	BNE R1, R2, 100 	                if (R1!=R2) goto PC+4+100 
-SLT (Set on less than) 	                SLT R1, R2, R3 	                    if (R2<R3) R1←1; else R1 =0 
+BNE (Branch on not equal) 	        BNE R1, R2, 100 	                if (R1!=R2) goto PC+4+100 
+SLT (Set on less than) 	                SLT R1, R2, R3 	                    	if (R2<R3) R1←1; else R1 =0 
  
 • Unconditional Jump Instructions 
-INSTRUCTION 	                        SYNTAX 	                            MEANING 
-J (Jump) 	                        	J 100 	                        	Goto 100 
-JR (Jump Register) 	                	JR R7 	                        	Goto R7 
+INSTRUCTION 	                        SYNTAX 	                            	MEANING 
+J (Jump) 	                        J 100 	                        	Goto 100 
+JR (Jump Register) 	               	JR R7 	                        	Goto R7 
 JAL (Jump and Link) 	                JAL 100 	                        R31←PC+4; goto 100 
 JALR (Jump and Link Register) 	        JALR R7 	                        R31←PC+4; PC←R8 
  
