@@ -49,44 +49,58 @@ Function Implementations: 
 		○  This function is declared globally  
 		○ This collects the argument indexes from parser function and stores the values in arrays. 
 		○ This is not declared dynamically. 
+		. Here we also store the values of the array which we  have to sort.
 • Register function 
 		○ The register functions store all the values of register and prints at the end. 
 •  PARSER function: 
 		○ The Parse function enables the user to parse the data in one field in the source file and write the "parts" of the data to a field or fields in the target file. 
 		○ We used parser function to read the file line by line from main function. 
-		○ We described pc counter and pin, the ‘pc counter’ counts the total no. of lines in the given file and ‘pin’ is counts the words in a particular line. 
+		.We described pc counter and pin, the ‘pc counter’ counts the total no. of lines in the given file and ‘pin’ is counts the instruction number of that particular instruction. 
 		○ If the word is equal to a particular instruction the parser sends the line and parameters to that particular function. 
 		○ The before sending as arguments/parameters to the function the string the converted to int/double. 
 		○ This reads and store indexes value. 
 • ADD function 
 		○ The argument indexes are loaded from parser function to Add function. 
-		○ The add function performs the substract of last two parameters and the value is stored in first parameter. 
+		.The add function performs the addition of registers with last two parameters as indexes and the value of result is stored in register with index as first parameter. 
 		○ ADD R1, R2, R3 [R1 = R2 + R3] 
 • ADDI function 
 		○ The argument indexes are loaded from parser function to Addi function. 
-		○ The addi function performs the addition of last two parameters and the value is stored in first parameter. 
+		○ The addi function performs the addition of registers with indexes as last two parameters and the value is stored in register with index as first parameter. 
 		○ ADD R1, R2, 100 [R1 = R2 + 100] 
 • BEQ function 
 		○ The argument indexes are loaded from parser function to Beq function. 
 		○ The beq function checks the equality of first two arguments and for last parameter jump function is called(if the arguments are equal). 
-		○ BEQ R1, R2, 100 [if (R1!=R2) goto PC+4+100] 
+		○ BEQ R1, R2, 100 [if (R1!=R2) jumps to next instruction] 
 • SLT function 
 		○ The argument indexes are loaded from parser function to Slt function. 
 		○ The slt function compares the last two arguments and 0 or 1 is stored in first argument. 
-		○ SLT R1, R2, R3 [if (R2<R3) R1←1; else R1 =0] 
+		○ SLT R1, R2, R3 [if (R2<R3) R1←1; else R1 =0] 
 • JUMP function 
-		○ The address is sent to Jump function by the parser. 
-		○ The jump function goes to the given address argument in the function. 
-		○ J 100 [goto 100] 
+		○ The pin which indicates the instruction number is sent to Jump function by the parser. 
+                . Here we open the file read line by line and store them in a string array.
+		○  The jump function goes to the given instruction number (i.e, pin) 
+                .J 100 [goto 100 and executes the instructions line by line continuolsy from that given index in that string array].
+	
 • LOAD function 
-		○ The argument indexes are loaded from parser function to Load Word function. 
-		○ The last parameter index value is loaded to first parameter index value. 
-		○ LW R1, R2 [R1 ← R2] 
+		.The argument indexes are loaded from parser function to Load Word function. 
+                .This function takes the index of last parameter and fetches for value stored in that particlar index of register (suppose that value be 3) then it loads value stored in the memory from mem[3] and assigns to register with index as first parameter
+                .LW R1, R2 [R1 ← R2] 
 • STORE function 
-		○ The argument indexes are loaded from parser function to Load Word function. 
-		○ The last parameter index value is stored in first parameter index value. 
-		○ SW R1, R2 [R1 ← R2] 
+		 .The argument indexes are loaded from parser function to Load Word function. 
+                 .This function takes the index of first parameter and fetches for value stored in that particlar index of register (suppose that value be 3) then it takes that value stored in the memory from mem[3] and assigns to register with index as second parameter
+                 .SW R1, R2 [R1-> R2]
 • SUB function 
 		○ The arguments are loaded from parser function to Sub function. 
-		○ The sub function performs the addition of last two parameters and the value is stored in first parameter. 
+		○ The sub function performs the addition of registers of last two parameters and the value is stored in register with first parameter as index. 
 		○ SUB R1, R2, R3 [R1 = R2 - R3] 
+# usage:
+.the source code folder has main code contains the whole program implimented in c++.
+. a file bubblesort.asm is there in which bubble sort algorithm is implimented in assembly code.
+. And other file called sum.asm which is implimented in assembly code to get the sum of 10 numbers.
+. To run and check our bubble sort program just copy paste the code in source code in any online compiler and also attach the file bubblesort.asm along with it while execution.
+
+# FINAL OUTPUT :
+. AT the final we display all the values stored in the registers (R0 to R31) and we also display the sorted array at the end.
+	 
+
+ 
