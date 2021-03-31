@@ -134,7 +134,7 @@ Function Implementations: 
 • Final output:
                ○ according the user input the pipeline with data forwarding or pipeline without data forwarding is selected.
 	       ○ we print total number of instructions, total number of stalls, print the dependent instructions of assembly code.
-	       ○ print the ipc (nstruction per cycle) of the given assembly code. 
+	       ○ print the ipc (instruction per cycle) of the given assembly code. 
  
  
  
