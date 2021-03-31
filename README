@@ -100,7 +100,42 @@ Function Implementations: 
                 ○ To run and check our bubble sort program just copy paste the code in source code in any online compiler and also attach the file bubblesort.asm along with it while execution.
 
 • FINAL OUTPUT 
-               ○ AT the final we display all the values stored in the registers (R0 to R31) and we also display the sorted array at the end.
+               ○ At the final we display all the values stored in the registers (R0 to R31) and we also display the sorted array at the end.
 	 
+• PHASE 2
 
+• Functions implemented
+	       ○ pipeline with stalls(no data forwarding) function
+	       ○ pipeline with data  forwarding function
+	       ○ branch function
+• Main assumptions:
+               ○ here an every instruction is considered of Rtype a 2d array array[1000][3] is considered
+	       ex: where array[1][0]=destinaton register, array[1][1]=source register 1, array[1][2] = source register 2
+	           rows- represent instruction number , columns = 3 it is fixed.
+	       ○  an array of strings (line1[1000]) which stores the instructions which are dependent is declared.
+               ○  an integer clock_2 is declared to count number of cycles required to execute assembly code.
+	       
+• pipeline_withstalls function:
+               ○ As we have already stored all reisters in array[][3], here we check dependencies of source registers of current instruction with the destination registers of previous 2 intructions.
+	       ○ If there is a dependency of registers we increase count of number of stalls.
+	       ○ we also count number of branch instructions and increase count of number of stalls.
+	       ○ we add these two to the total number of cycles (pipelined) i.e, no dependencies.
+	       ○ we also print the instructions which are dependent in the given assembly code.
+	       ○ print ipc = 1/cpi , cpi = total no cycles / total no. of instructions .
+	       
+• pipeline_withdataforwarding function: 
+               ○ here we just calculate the total number of branch instructions and increase count of number of stalls.
+	       ○ we add this count to total number cycles taken for pipelined (with no dependencies) and print it.
+	       ○ ipc for pipeline with data forwarding is calculated and printed.
+
+• branch function :
+               ○ here we just print the branch instructions in the assembly code.
+ 
+• Final output:
+               ○ according the user input the pipeline with data forwarding or pipeline without data forwarding is selected.
+	       ○ we print total number of instructions, total number of stalls, print the dependent instructions of assembly code.
+	       ○ print the ipc (nstruction per cycle) of the given assembly code. 
+ 
+ 
+ 
  
