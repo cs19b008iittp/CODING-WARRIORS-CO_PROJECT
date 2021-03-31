@@ -789,7 +789,6 @@ void display()
     }
     cout<<"\n----------------------------------------------------------------------------------------------------------------------------\n";
 }
-void my_function();
 void pipeline_withstalls();
 void branch_ins();
   void jump(int l)
