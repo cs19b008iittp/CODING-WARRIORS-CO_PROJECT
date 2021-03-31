@@ -1,0 +1,45 @@
+ void pipeline_withstalls()
+   {
+       ifstream infile;
+       infile.open("bubblesort.asm");
+       if(!infile){
+           cout<<"No such file";
+           exit(0);
+       }
+       else
+       {
+           string str;
+           y=0;
+           cout<<"instructions with stalls:\n";
+           while(getline(infile,str))
+           {
+              y++;
+              int tem=y;
+              if(tem==1)
+              {
+                   
+                  if(arr[tem][1]==arr[tem-1][0]||arr[tem][2]==arr[tem-1][0])
+                  {
+                      count1++;
+                    
+                      cout<<line1[tem]<<endl;
+                  }
+              }
+
+              if(tem>1)
+              {
+                  if(arr[tem][1]==arr[tem-1][0]||arr[tem][1]==arr[tem-2][0]||arr[tem][2]==arr[tem-1][0]||arr[tem][2]==arr[tem-2][0])
+                  {
+                      count1++;
+                     
+                      cout<<line1[tem]<<endl;
+               
+                  }
+            }
+           }
+           clock_2= clock_2+ x+cnt_branch+count1-1;
+           cout<<"Total number of cycles : "<<clock_2<<endl;
+      }
+      float ipc= (float)x/clock_2;
+     cout<<"IPC "<<ipc<<endl;  
+   }

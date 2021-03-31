@@ -1,0 +1,17 @@
+ void pipeline_withdataforwarding()
+   {
+        ifstream infile;
+        infile.open("bubblesort.asm");
+        if(!infile){
+             cout<<"No such file";
+             exit(0);
+        }
+        else
+        {
+             clock_2=clock_2+x+cnt_branch-1;
+             cout<<"Total number of cycles :"<<clock_2<<endl;
+             float ipc=(float) x/clock_2;
+             cout<<"IPC: "<<ipc<<endl;
+          
+        }
+   }

@@ -1,0 +1,22 @@
+void branch_ins()
+   {
+        for(int i=0;i<var;i++)
+        {
+             for(int j=0;j<var;j++)
+             {
+                  if(branch[i]==branch[j]&&i!=j)
+                  {
+                       branch[j]=" ";
+                  }
+             }
+
+            
+        }
+        for(int i=0;i<var;i++)
+        {
+             if(branch[i]!=" ")
+             {
+                  cout<<branch[i]<<endl;
+             }
+        }
+   }
