@@ -1,4 +1,4 @@
-array : 7 8 4 1 5
+array 7 8 4 1 5
 addi R10, R10, 4
 addi R4, R4, 1
 sub R8, R8, R4
