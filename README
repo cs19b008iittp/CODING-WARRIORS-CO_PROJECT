@@ -136,6 +136,7 @@ Function Implementations: 
 	       ○ we print total number of instructions, total number of stalls, print the dependent instructions of assembly code.
 	       ○ print the ipc (instruction per cycle) of the given assembly code. 
  
+ • PHASE 3
  
  
  
