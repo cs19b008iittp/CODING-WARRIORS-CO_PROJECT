@@ -1,0 +1,25 @@
+ int search_cachel1(int *ptr)
+   {
+       
+       test=ptr;
+      test = (int*)((uintptr_t)test % sets1);
+         int * trail=(int *)0x0; 
+        for(int h=0;h<sets1;h++)
+        {
+          trail = (int*)((uintptr_t)test / 4); 
+        if(test==trail)
+        {
+            for(int i=0;i<a1;i++)
+            {
+                if(tagl1[h][i]==ptr)
+                {
+                   
+                    return cachel1[h][i];  
+                }
+            }
+        }
+              trail++;
+        }
+       
+        return -2;
+   }

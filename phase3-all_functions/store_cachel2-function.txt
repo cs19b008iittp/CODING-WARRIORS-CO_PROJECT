@@ -1,0 +1,22 @@
+void store_cachel2(int* ptr, int data)
+   {
+          test=ptr;
+      test = (int*)((uintptr_t)test % sets2); 
+         int * trail=(int *)0x0;  
+        for(int h=0;h<sets2;h++)
+        {
+          trail = (int*)((uintptr_t)test / 4); 
+        if(test==trail)
+        {
+            for(int i=0;i<a2;i++)
+            {
+                if(tagl2[h][i]==ptr)
+                {
+                   cachel2[h][i]=data;
+                    return ;  
+                }
+            }
+        }
+              trail++;
+        }
+   }

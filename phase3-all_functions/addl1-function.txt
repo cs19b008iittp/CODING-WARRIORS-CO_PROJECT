@@ -1,0 +1,28 @@
+void  addl1(int *ptr, int data)
+   {
+      test=ptr;
+      test = (int*)((uintptr_t)test % sets1); 
+         int * trail=(int *)0x0;  
+        for(int h=0;h<sets1;h++)
+        {
+          trail = (int*)((uintptr_t)test / 4); 
+        if(test==trail)
+        {
+            pqr1[h]++;
+            for(int i=0;i<a1;i++)
+            {
+                if(tagl1[h][i]==NULL)
+                { 
+                   tagl1[h][i]=ptr;
+                   cachel1[h][i]=data;
+                    return;
+                }
+            }
+             tagl1[h][pqr1[h]%a1]=ptr;
+             cachel1[h][pqr1[h]%a1]=data;
+             return; 
+        }
+              trail++;
+        }
+      
+   }
