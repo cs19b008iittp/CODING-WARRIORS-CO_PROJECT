@@ -138,5 +138,17 @@ Function Implementations: 
  
  • PHASE 3
  
- 
+ •Functions Implemented :
+                
+	       ○ search cachel1 function
+       	       ○ search cachel2 function
+	       ○ store cachl1  function
+	       ○ store cachel2 function
+               ○ add cachel1 function
+	       ○ add cachel2 function
+	      
+• Main Assumptions :
+               
+	       ○ Here two 2 dimensional integer pointer arrays tagl1[100][100],tagl2[100][100] are considered to store the addresses of the memoery elements.
+	       ○ similarly teo 2 dimensional integer arrays cachel1[1000], cachel2[1000] arrays are considered to store the data corresponding to 
  
