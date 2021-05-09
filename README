@@ -149,6 +149,42 @@ Function Implementations: 
 	      
 • Main Assumptions :
                
-	       ○ Here two 2 dimensional integer pointer arrays tagl1[100][100],tagl2[100][100] are considered to store the addresses of the memoery elements.
-	       ○ similarly teo 2 dimensional integer arrays cachel1[1000], cachel2[1000] arrays are considered to store the data corresponding to 
+	       ○ Here two 2 dimensional integer pointer arrays tagl1[100][100],tagl2[100][100] are considered to store the addresses of the memory elements.
+	       ○ here number of columns in the above 2d array declares to which set it belongs to and columns declares the associativity of the set.
+	       ○ similarly two 2 dimensional integer arrays cachel1[1000], cachel2[1000] arrays are considered to store the data corresponding to memory addresses.
+	       ○ this phase is just a implementation of phase 2 here we just add extra number of stalls which have taken access from both caches rather than memory array.
+
+• Input:  the cache size , associativity, block size , access latency of both caches are taken as input. And also access latency of memory array is also taken as input.     
+
+• ○sets are also implemented here where number of sets = number of blocks/ associativity.   
+  ○ whenever a memory address is generated we just find out the remainder and find out to which set the memory address belongs to.
+
+• search cachel1 function :
+               ○ whenever we want to load a memory address into a register here we just send that memory address as a argument to this function.
+	       ○ As we find out to which set, memory address belongs to , we just check the particular column and returns the corresponding data stored in cache array if it matches.
+	       ○ Thereby the returned value is assigned to the register in the load function.
+	    
+• search cachel2 function is same as search cachel2 function.
+               ○ here a variable l1_misses is declared and it is incremented here whenever we find a memory address in cache l2 but not l1.
+	       ○ similarly a variable l2_misses is declared which is incremented whenever generated memory address is not found in cachel1.
+	       ○ And total_access variable is declared that is incremented whenever it enters the load function .
+• store cachel1 function:
+               ○ This function is implemented in the store function where we fetch for the memory address required to push value into it .
+	       ○ if the memory address is found in tagl1 array then we store the data into the corresponding cache array .
+	       
+• store cachel2 function is implemented same as store cache l2 function.
+
+• add cachel1 function :
+               ○ whenever a generated memory address is not found in both of the caches then memory access is taken from the memory array .   
+	       ○ so here we add the memory address and data element to tagl1 and cachl1 arrays whenever it is NULL and return it.
+	       ○ LRU policy is implemented here whenever the tagl1 array is filled then the upcoming memory address is stored in first location and continue to store from there replacing previous ones.
+
+• add cachel2 function 	is implemented as same as add cachel2 function.       
  
+• Final Output :
+               ○ we print the total miss rate of l1 cache and l2 cache and also total miss rate includes both caches.
+	       ○ we print the total number of stalls , and also IPC of the particular program.
+	       
+	       I ENJOYED WHILE DOING THE WHOLE PROJECT IT HELPED ME GREALTY IN FINDING OUT PROBLEMS AND ALSO SORTING OUT SOLUTIONS FOR THAT.
+	        THANKYOU SIR FOR GIVING SUCH A GREAT PROJECT FOR US, AS IT WAS ONLINE IT WAS A BIT DIFFICULT EVEN THOUGH I MANAGED TO COMPLETE PROJECT IN GIVEN TIME .
+	        EXPECTING SOME MORE GREAT PROJECTS FROM YOU IN UPCOMING SEMESTERS SIR..	                    
